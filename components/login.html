@@ -7,8 +7,9 @@
   <link href="../css/lib/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-  <div class="d-flex justify-content-center align-items-center" id="registerContent">
-    <form class="card col-12 col-md-5 col-lg-4 mt-4 mb-4" id="frmRegister">
+ <!--Login Div Form-->
+  <div class="d-flex justify-content-center align-items-center" id="loginContent">
+    <form class="card col-12 col-md-5 col-lg-4 mt-4 mb-4" id="frmLogin">
         <div class="card-body">
             <h1 class="text-center mb-2 text-primary">SwollenHippo</h1>
             <hr>
@@ -16,39 +17,65 @@
             <p class="text-center"><em>Please Enter Login Information Below</em></p>
 
             <!--Login Input Parameters-->
+            
             <!--Email-->
             <div class="mb-3">
                 <label for="email" class="form-label">Email address</label>
                 <input type="email" class="form-control" id="emailLogin" required placeholder="example@email.com">
             </div>
+
             <!--Password-->
             <div>
                 <label for="password" class="form-label">Password</label>
                 <input type="password" class="form-control" id="passwordLogin" required placeholder="Enter your password">
             </div>
+
+            <!--ForgotPassword/switch to Reset Password Page HyperLink-->
             <div class="mb-3">
-                <a id="switchForgotPassword" style="font-size: small;" class="btn btn-link">Forgot your password</a>
+                <a id="btnForgotPass" style="font-size: small;" class="btn btn-link">Forgot your password</a>
             </div>
 
             <!-- Login Button-->
             <div class="mt-3 d-flex justify-content-center " >
-                <button class="btn btn-primary btn-lg" id="btnLogin">Login</button>
+                <button class="btn btn-primary btn-lg w-100" id="btnLogin">Login</button>
             </div>
+
+            <!--Switch To Register Page Hyperlink -->
             <div class=" mt-5 d-flex justify-content-center">
-                <a id="switchtoRegister" class="btn btn-link" style="font-size: large;">Don't have an account? Register here!</a>
+                <a id="btmSwitchRegister" class="btn btn-link" style="font-size: large;">Don't have an account? Register here!</a>
             </div>
         </div>
     </form>
   </div>
 
-  <!-- Seperate login for Student and Instructor with inline styling to hide them by default -->
-  <div id="forgotPass" class="container mt-4" style="display: none;">
-    <h2>Forgot Password</h2>
-    <p>Enter in Email</p>
+  <!-- Seperate Reset Password Div -->
+  <div class="container justify-content-center" style="display: none;" id="resetPasswordContent">
+    <form class="card col-12 col-md-5 col-lg-4 mt-4 mb-4" id="frmResetPassword">
+      <div class="card-body">
+        <h1 class="text-center mb-2 text-primary">SwollenHippo</h1>
+        <hr>
+        <h2 class="text-center" style="font-weight: bolder;">Reset Password</h2>
+        <p class="text-center"><em>Enter your email below and we’ll send you a reset link.</em></p>
+  
+        <!-- Email Field -->
+        <div class="mb-3">
+          <label for="emailReset" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="emailReset" required placeholder="example@email.com">
+        </div>
+  
+        <!-- Send Email Button -->
+        <div class="mt-3 d-flex justify-content-center">
+          <button type="submit" class="btn btn-primary btn-lg w-100" id="btnResetEmail">Send Reset Link</button>
+        </div>
+  
+        <!-- Back to Login -->
+        <div class="mt-4 d-flex justify-content-center">
+          <a id="btnBackToLogin" class="btn btn-link">Back to Login</a>
+        </div>
+      </div>
+    </form>
   </div>
-
   <!--  JavaScript reference file -->
   <script src="../js/app.js"></script>
 </body>
 </html>
->>>>>>> Stashed changes
