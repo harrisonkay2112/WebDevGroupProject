@@ -14,22 +14,48 @@
         <h3 class="text-center">Account Registration</h3>
         <p style="text-align: center;">I am a...</p>
         <div class="mt-2 d-flex justify-content-around">
-          <button class="btn btn-primary" id="btnStudentRegister">Student</button>
-          <button class="btn btn-primary" id="btnInstructorRegister">Instructor</button>
+          <button class="btn btn-primary" id="btnStudentRegister" type="button">Student</button>
+          <button class="btn btn-primary" id="btnInstructorRegister" type="button">Instructor</button>
         </div>
       </div>
     </form>
   </div>
 
   <!-- Registration details for Student and Instructor with inline styling to hide them by default -->
-  <div id="studentRegistration" class="container mt-4" style="display: none;">
-    <h2>Student Registration</h2>
-    <p>Student-specific registration form goes here.</p>
+  <div id="studentRegistration" class="container mt-4 d-none justify-content-center" style="display: none;">
+    <form class="card col-12 col-md-5 col-lg-4 mt-4 mb-4" id="frmStudentRegister">
+      <div class="card-body">
+          <h1 class="text-center mb-2 text-primary">SwollenHippo</h1>
+          <h3 class="text-center mt-1 mb-4">Student Registration</h3>
+          <p>Account Credentials</p>
+          <input id="txtUsername" class="form-control mb-2" type="email" placeholder="Email" aria-label="Input email here">
+          <input id="txtPassword" class="form-control mb-2" type="password" placeholder="Password" aria-label="Input password here">
+          <input id="txtPasswordConfirm" class="form-control mb-2" type="password" placeholder="Confirm Password" aria-label="Confirm password here">
+          <p>Name</p>
+          <input id="txtFirstName" class="form-control mb-2" type="text" placeholder="First Name" aria-label="Input first name here">
+          <input id="txtLastName" class="form-control mb-2" type="text" placeholder="Last Name" aria-label="Input last name here">
+          <p>Contact Methods</p>
+          <input id="txtPhoneNumber" class="form-control mb-2" type="number" placeholder="Phone Number" aria-label="Input phone number here">
+          <input id="txtTeamsUser" class="form-control mb-2" type="text" placeholder="Microsoft Teams Username" aria-label="Input Microsoft Teams username here">
+          <input id="txtDiscordUser" class="form-control mb-2" type="text" placeholder="Discord Username" aria-label="Input Discord Username here">
+        </div>
+      </form>
   </div>
 
-  <div id="instructorRegistration" class="container mt-4" style="display: none;">
-    <h2>Instructor Registration</h2>
-    <p>Instructor-specific registration form goes here.</p>
+  <div id="instructorRegistration" class="container mt-4 d-none justify-content-center" style="display: none;">
+    <form class="card col-12 col-md-5 col-lg-4 mt-4 mb-4" id="frmInstructorRegister">
+      <div class="card-body">
+          <h1 class="text-center mb-2 text-primary">SwollenHippo</h1>
+          <h3 class="text-center mt-1 mb-4">Instructor Registration</h3>
+          <p>Account Credentials</p>
+          <input id="txtUsername" class="form-control mb-2" type="email" placeholder="Email" aria-label="Input email here">
+          <input id="txtPassword" class="form-control mb-2" type="password" placeholder="Password" aria-label="Input password here">
+          <input id="txtPasswordConfirm" class="form-control mb-2" type="password" placeholder="Confirm Password" aria-label="Confirm password here">
+          <p>Name</p>
+          <input id="txtFirstName" class="form-control mb-2" type="text" placeholder="First Name" aria-label="Input first name here">
+          <input id="txtLastName" class="form-control mb-2" type="text" placeholder="Last Name" aria-label="Input last name here">
+        </div>
+      </form>
   </div>
 
   <!-- Reference to your external JavaScript file -->
