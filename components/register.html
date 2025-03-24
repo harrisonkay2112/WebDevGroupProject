@@ -14,8 +14,8 @@
         <h3 class="text-center">Account Registration</h3>
         <p style="text-align: center;">I am a...</p>
         <div class="mt-2 d-flex justify-content-around">
-          <button class="btn btn-primary" id="btnStudentRegister" type="button">Student</button>
-          <button class="btn btn-primary" id="btnInstructorRegister" type="button">Instructor</button>
+          <button class="btn btn-primary" id="btnOpenStudentForm" type="button">Student</button>
+          <button class="btn btn-primary" id="btnOpenInstructorForm" type="button">Instructor</button>
         </div>
       </div>
     </form>
@@ -28,16 +28,17 @@
           <h1 class="text-center mb-2 text-primary">SwollenHippo</h1>
           <h3 class="text-center mt-1 mb-4">Student Registration</h3>
           <p>Account Credentials</p>
-          <input id="txtUsername" class="form-control mb-2" type="email" placeholder="Email" aria-label="Input email here">
-          <input id="txtPassword" class="form-control mb-2" type="password" placeholder="Password" aria-label="Input password here">
-          <input id="txtPasswordConfirm" class="form-control mb-2" type="password" placeholder="Confirm Password" aria-label="Confirm password here">
+          <input id="txtStudentUsername" class="form-control mb-2" type="email" placeholder="Email" aria-label="Input email here">
+          <input id="txtStudentPassword" class="form-control mb-2" type="password" placeholder="Password" aria-label="Input password here">
+          <input id="txtStudentPasswordConfirm" class="form-control mb-2" type="password" placeholder="Confirm Password" aria-label="Confirm password here">
           <p>Name</p>
-          <input id="txtFirstName" class="form-control mb-2" type="text" placeholder="First Name" aria-label="Input first name here">
-          <input id="txtLastName" class="form-control mb-2" type="text" placeholder="Last Name" aria-label="Input last name here">
+          <input id="txtStudentFirstName" class="form-control mb-2" type="text" placeholder="First Name" aria-label="Input first name here">
+          <input id="txtStudentLastName" class="form-control mb-2" type="text" placeholder="Last Name" aria-label="Input last name here">
           <p>Contact Methods</p>
-          <input id="txtPhoneNumber" class="form-control mb-2" type="number" placeholder="Phone Number" aria-label="Input phone number here">
-          <input id="txtTeamsUser" class="form-control mb-2" type="text" placeholder="Microsoft Teams Username" aria-label="Input Microsoft Teams username here">
-          <input id="txtDiscordUser" class="form-control mb-2" type="text" placeholder="Discord Username" aria-label="Input Discord Username here">
+          <input id="txtStudentPhoneNumber" class="form-control mb-2" type="number" placeholder="Phone Number" aria-label="Input phone number here">
+          <input id="txtStudentTeamsUser" class="form-control mb-2" type="text" placeholder="Microsoft Teams Username" aria-label="Input Microsoft Teams username here">
+          <input id="txtStudentDiscordUser" class="form-control mb-2" type="text" placeholder="Discord Username" aria-label="Input Discord Username here">
+          <button class="btn btn-primary col-12 mt-2" type="button" id="btnRegisterStudent">Register</button>
         </div>
       </form>
   </div>
@@ -48,17 +49,18 @@
           <h1 class="text-center mb-2 text-primary">SwollenHippo</h1>
           <h3 class="text-center mt-1 mb-4">Instructor Registration</h3>
           <p>Account Credentials</p>
-          <input id="txtUsername" class="form-control mb-2" type="email" placeholder="Email" aria-label="Input email here">
-          <input id="txtPassword" class="form-control mb-2" type="password" placeholder="Password" aria-label="Input password here">
-          <input id="txtPasswordConfirm" class="form-control mb-2" type="password" placeholder="Confirm Password" aria-label="Confirm password here">
+          <input id="txtInstructorUsername" class="form-control mb-2" type="email" placeholder="Email" aria-label="Input email here">
+          <input id="txtInstructorPassword" class="form-control mb-2" type="password" placeholder="Password" aria-label="Input password here">
+          <input id="txtInstructorPasswordConfirm" class="form-control mb-2" type="password" placeholder="Confirm Password" aria-label="Confirm password here">
           <p>Name</p>
-          <input id="txtFirstName" class="form-control mb-2" type="text" placeholder="First Name" aria-label="Input first name here">
-          <input id="txtLastName" class="form-control mb-2" type="text" placeholder="Last Name" aria-label="Input last name here">
+          <input id="txtInstructorFirstName" class="form-control mb-2" type="text" placeholder="First Name" aria-label="Input first name here">
+          <input id="txtInstructorLastName" class="form-control mb-2" type="text" placeholder="Last Name" aria-label="Input last name here">
+          <button class="btn btn-primary col-12 mt-2" type="button" id="btnRegisterInstructor">Register</button>
         </div>
       </form>
   </div>
 
-  <!-- Reference to your external JavaScript file -->
   <script src="../js/app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
