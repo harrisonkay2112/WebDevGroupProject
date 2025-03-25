@@ -1,0 +1,85 @@
+<!---AUTHOR: HARRISON KAY
+    DUE DATE: 3/24/2025
+    PURPOSE: LOGIN FORM USING SWEET ALERTS AND BOOTSTRAP, REDIRECTS USER BASED ON BUTTON SELECTION-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link href="../css/lib/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+ <!--Login Div Form-->
+  <div class="d-flex justify-content-center align-items-center" id="loginContent">
+    <form class="card col-12 col-md-5 col-lg-4 mt-4 mb-4" id="frmLogin">
+        <div class="card-body">
+            <h1 class="text-center mb-2 text-primary">SwollenHippo</h1>
+            <hr>
+            <h2 class="text-center" style="font-weight: bolder;">Login</h2>
+            <p class="text-center"><em>Please Enter Login Information Below</em></p>
+
+            <!--Login Input Parameters-->
+            
+            <!--Email Input-->
+            <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input  class="form-control" id="emailLogin" placeholder="example@email.com">
+            </div>
+
+            <!--Password Input-->
+            <div>
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="passwordLogin" required placeholder="Enter your password">
+            </div>
+
+            <!--ForgotPassword/switch to Reset Password Page HyperLink-->
+            <div class="mb-3">
+                <a id="btnForgotPass" style="font-size: small;" class="btn btn-link">Forgot your password</a>
+            </div>
+
+            <!-- Login Button-->
+            <div class="mt-3 d-flex justify-content-center " >
+                <button class="btn btn-primary btn-lg w-100" id="btnLogin">Login</button>
+            </div>
+
+            <!--Switch To Register Page Hyperlink -->
+            <div class=" mt-5 d-flex justify-content-center">
+                <a id="btnSwitchRegister" class="btn btn-link" style="font-size: large;">Don't have an account? Register here!</a>
+            </div>
+        </div>
+    </form>
+  </div>
+
+  <!-- Seperate Reset Password Div -->
+  <div class="container justify-content-center" style="display: none;" id="resetPasswordContent">
+    <form class="card col-12 col-md-5 col-lg-4 mt-4 mb-4" id="frmResetPassword">
+      <div class="card-body">
+        <h1 class="text-center mb-2 text-primary">SwollenHippo</h1>
+        <hr>
+        <h2 class="text-center" style="font-weight: bolder;">Reset Password</h2>
+        <p class="text-center"><em>Enter your email below and we’ll send you a reset link.</em></p>
+  
+        <!-- Send Email Field Input-->
+        <div class="mb-3">
+          <label for="emailReset" class="form-label">Email address</label>
+          <input class="form-control" id="resetEmail" placeholder="example@email.com">
+        </div>
+  
+        <!-- Send Email Button -->
+        <div class="mt-3 d-flex justify-content-center">
+          <button type="submit" class="btn btn-primary btn-lg w-100" id="btnResetEmail">Send Reset Link</button>
+        </div>
+  
+        <!-- Back to Login -->
+        <div class="mt-4 d-flex justify-content-center">
+          <a id="btnBackToLogin" class="btn btn-link">Back to Login</a>
+        </div>
+      </div>
+    </form>
+  </div>
+  <!--  JavaScript reference file -->
+  <script src="../js/app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
