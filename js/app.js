@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // Validate inputed string as an email, returns True or False
   function validateEmail(email) {
     // Simple email regex
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailPattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
     return emailPattern.test(email);
   };
 
