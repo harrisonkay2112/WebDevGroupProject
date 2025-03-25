@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Declare Variables
   const btnStudent = document.getElementById("btnOpenStudentForm");
   const btnInstructor = document.getElementById("btnOpenInstructorForm");
+  const btnRegisterButtons = document.querySelectorAll("#btnBacktoRegister");
 
   const studentDiv = document.getElementById("studentRegistration");
   const instructorDiv = document.getElementById("instructorRegistration");
@@ -21,44 +23,28 @@ document.addEventListener("DOMContentLoaded", function () {
       instructorDiv.classList.add("d-flex");      // Ensure it displays properly
       studentDiv.classList.add("d-none");         // Hide student form
   });
+
+  btnRegisterButtons.forEach(button => {
+    button.addEventListener("click", function (event) {
+        event.preventDefault();
+        selectRegisterDiv.classList.remove("d-none");  // Show main form
+        selectRegisterDiv.classList.add("d-flex");  // Ensure it displays properly
+        instructorDiv.classList.remove("d-flex");
+        studentDiv.classList.remove("d-flex");
+        instructorDiv.classList.add("d-none");      // Hide instructor form
+        studentDiv.classList.add("d-none");         // Hide student form
+    });
+});
 });
 
-document.querySelector("#btnRegisterStudent").addEventListener("click",(e) => {
-  const regEmail = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
-  let strStudentUsername = document.querySelector("#txtStudentUsername").value
-  let strStudentPassword = document.querySelector('#txtStudentPassword').value
-  strStudentUsername = strStudentUsername.toLowerCase()
-  let blnStudentRegError = false
-  let strStudentRegMessage = ''
 
-  if(!regEmail.test(strStudentUsername)){
-      blnStudentRegError = true
-      strStudentRegMessage += '<p  class="mb-0 mt-0">Username must be an email address</p>'
-  }
-  
-  if(strStudentPassword.length < 1){
-      blnStudentRegError = true
-      strStudentRegMessage += '<p class="mb-0 mt-0">Password Cannot Be Blank</p>'
-  }
+// Redirects user to Register Page
+btnSwitchLogin.addEventListener('click', () => {
+  window.location.href = "./login.html";
 
-  if(blnStudentRegError == true){
-    Swal.fire({
-    title: "Oh no, you have an error!",
-    html: strStudentRegMessage,
-    icon: "error"
-  });
-  }
+});
 
-  if(blnStudentRegError == false){
-      strStudentRegMessage += 'Registration Successful!'
-      Swal.fire({
-      title: "Success!",
-      html: strStudentRegMessage,
-      icon: "success"
-  });
-  }
-})
-
+// Registers Student
 document.querySelector("#btnRegisterStudent").addEventListener("click",(e) => {
   const regEmail = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
   let strStudentUsername = document.querySelector("#txtStudentUsername").value
@@ -101,6 +87,7 @@ document.querySelector("#btnRegisterStudent").addEventListener("click",(e) => {
   }
 })
 
+// Registers Instructor
 document.querySelector("#btnRegisterInstructor").addEventListener("click",(e) => {
   const regEmail = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
   let strInstructorUsername = document.querySelector("#txtInstructorUsername").value

@@ -1,3 +1,4 @@
+<!-- Author: Dalton Neisz -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,25 +8,31 @@
   <link href="../css/lib/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+  <!-- Registration Selection Form - Shown by default -->
   <div class="d-flex justify-content-center align-items-center" id="registerContent">
     <form class="card col-12 col-md-5 col-lg-4 mt-4 mb-4" id="frmRegister">
       <div class="card-body">
         <h1 class="text-center mb-2 text-primary">SwollenHippo</h1>
+        <hr>
         <h3 class="text-center">Account Registration</h3>
         <p style="text-align: center;">I am a...</p>
         <div class="mt-2 d-flex justify-content-around">
           <button class="btn btn-primary" id="btnOpenStudentForm" type="button">Student</button>
           <button class="btn btn-primary" id="btnOpenInstructorForm" type="button">Instructor</button>
         </div>
+        <div class="mt-2 d-flex justify-content-center">
+          <a id="btnSwitchLogin" class="btn btn-link" style="font-size: large;">Already have an account? Login here!</a>
+        </div>
       </div>
     </form>
   </div>
 
-  <!-- Registration details for Student and Instructor with inline styling to hide them by default -->
+  <!-- Student Registration Form - Hidden by default -->
   <div id="studentRegistration" class="container mt-4 d-none justify-content-center" style="display: none;">
     <form class="card col-12 col-md-5 col-lg-4 mt-4 mb-4" id="frmStudentRegister">
       <div class="card-body">
           <h1 class="text-center mb-2 text-primary">SwollenHippo</h1>
+          <hr>
           <h3 class="text-center mt-1 mb-4">Student Registration</h3>
           <p>Account Credentials</p>
           <input id="txtStudentUsername" class="form-control mb-2" type="email" placeholder="Email" aria-label="Input email here">
@@ -39,14 +46,19 @@
           <input id="txtStudentTeamsUser" class="form-control mb-2" type="text" placeholder="Microsoft Teams Username" aria-label="Input Microsoft Teams username here">
           <input id="txtStudentDiscordUser" class="form-control mb-2" type="text" placeholder="Discord Username" aria-label="Input Discord Username here">
           <button class="btn btn-primary col-12 mt-2" type="button" id="btnRegisterStudent">Register</button>
+          <div class="mt-2 d-flex justify-content-center">
+            <a id="btnBacktoRegister" class="btn btn-link" style="font-size: large;">Go back to Register Menu</a>
+          </div>
         </div>
       </form>
   </div>
 
+  <!-- Instructor Registration Form - Hidden by default -->
   <div id="instructorRegistration" class="container mt-4 d-none justify-content-center" style="display: none;">
     <form class="card col-12 col-md-5 col-lg-4 mt-4 mb-4" id="frmInstructorRegister">
       <div class="card-body">
           <h1 class="text-center mb-2 text-primary">SwollenHippo</h1>
+          <hr>
           <h3 class="text-center mt-1 mb-4">Instructor Registration</h3>
           <p>Account Credentials</p>
           <input id="txtInstructorUsername" class="form-control mb-2" type="email" placeholder="Email" aria-label="Input email here">
@@ -56,6 +68,9 @@
           <input id="txtInstructorFirstName" class="form-control mb-2" type="text" placeholder="First Name" aria-label="Input first name here">
           <input id="txtInstructorLastName" class="form-control mb-2" type="text" placeholder="Last Name" aria-label="Input last name here">
           <button class="btn btn-primary col-12 mt-2" type="button" id="btnRegisterInstructor">Register</button>
+          <div class="mt-2 d-flex justify-content-center">
+            <a id="btnBacktoRegister" class="btn btn-link" style="font-size: large;">Go back to Register Menu</a>
+          </div>
         </div>
       </form>
   </div>
