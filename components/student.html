@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Dashboard</title>
+  <link href="../css/lib/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="bg-light">
+
+
+<!-- Student Dashboard-->
+<div id="divStudentDashboard" class="container mt-4">
+  <h1 class="text-primary text-center">SwollenHippo - Student Dashboard</h1>
+  <hr>
+
+  <!-- Join Group Section -->
+  <div class="card mb-4">
+    <div class="card-header bg-primary text-white">Join a Group</div>
+    <div class="card-body">
+    <input type="text" id="txtGroupCode" class="form-control mb-2" placeholder="Enter group code" />
+      <button class="btn btn-success" id="btnJoinGroup">Join Group</button>
+   
+    </div>
+  </div>
+
+  <!-- Teammate Info Section -->
+  <div class="card mb-4">
+   
+    <div class="card-header bg-info text-white">My Team</div>
+    <div class="card-body" id="divTeamInfo">
+      <p>No teammates loaded yet.</p>
+    
+    </div>
+  </div>
+
+  <!-- Toggle Review Form -->
+  <div class="text-center mb-3">
+   
+    <button class="btn btn-outline-primary" id="btnToggleReviewForm">
+      Complete a Review
+   
+    </button>
+  </div>
+
+  <!-- Submit Peer Review Panel Hidden until button clicked -->
+  <div class="card mb-4 d-none" id="divReviewPanel">
+   
+    <div class="card-header bg-secondary text-white">Submit Peer Review</div>
+    <div class="card-body">
+      <select class="form-select mb-2" id="ddlTeammates">
+        
+        <option selected disabled>Select a teammate</option>
+      
+    </select>
+
+      <label for="ddlScore" class="form-label">Review Score</label>
+      <select class="form-select mb-2" id="ddlScore">
+        
+        <option value="" disabled selected>Select a score</option>
+        <option value="1">1 - Poor</option>
+        <option value="2">2 - Fair</option>
+        <option value="3">3 - Good</option>
+        <option value="4">4 - Very Good</option>
+        <option value="5">5 - Excellent</option>
+      </select>
+
+      <label for="txtPublicFeedback" class="form-label">Public Feedback</label>
+      <textarea class="form-control mb-2" id="txtPublicFeedback" rows="3" placeholder="Public feedback..."></textarea>
+
+      <label for="txtPrivateFeedback" class="form-label">Private Feedback (Instructor Only)</label>
+      <textarea class="form-control mb-2" id="txtPrivateFeedback" rows="2" placeholder="Private notes for instructor..."></textarea>
+
+      <button class="btn btn-primary" id="btnSubmitReview">Submit Review</button>
+    </div>
+  </div>
+
+  <!-- Received Feedback Section With Placeholder feedback from js-->
+  <div class="card mb-4">
+    <div class="card-header bg-dark text-white">My Feedback</div>
+    <div class="card-body" id="divFeedbackInbox">
+      <p>No feedback received yet.</p>
+    </div>
+  </div>
+</div>
+
+<script src="../js/student.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
