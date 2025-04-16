@@ -8,55 +8,60 @@
 </head>
 <body class="bg-light">
 
-
-<!-- Student Dashboard-->
-<div id="divStudentDashboard" class="container mt-4">
+<!-- Student dashboard -->
+<div id="divStudentDashboard" class="container mt-4" role="main" aria-label="Student Dashboard Main Content">
   <h1 class="text-primary text-center">SwollenHippo - Student Dashboard</h1>
   <hr>
 
-  <!-- Join Group Section -->
-  <div class="card mb-4">
+  <!-- Join group section -->
+  <div class="card mb-4" aria-label="Join Group Section">
     <div class="card-header bg-primary text-white">Join a Group</div>
     <div class="card-body">
-    <input type="text" id="txtGroupCode" class="form-control mb-2" placeholder="Enter group code" />
-      <button class="btn btn-success" id="btnJoinGroup">Join Group</button>
-   
+      <input
+        type="text"
+        id="txtGroupCode"
+        class="form-control mb-2"
+        placeholder="Enter group code"
+        aria-label="Group Code Input"
+      />
+      <button class="btn btn-success" id="btnJoinGroup" aria-label="Join Group Button">Join Group</button>
     </div>
   </div>
 
-  <!-- Teammate Info Section -->
-  <div class="card mb-4">
-   
+  <!-- teammate section -->
+  <div class="card mb-4" aria-label="My Team Section">
     <div class="card-header bg-info text-white">My Team</div>
-    <div class="card-body" id="divTeamInfo">
+    <div class="card-body" id="divTeamInfo" aria-label="Teammate Info Display">
       <p>No teammates loaded yet.</p>
-    
     </div>
   </div>
 
-  <!-- Toggle Review Form -->
+  <!-- Toggle Review Form Button -->
   <div class="text-center mb-3">
-   
-    <button class="btn btn-outline-primary" id="btnToggleReviewForm">
+
+    <button
+      class="btn btn-outline-primary"
+      id="btnToggleReviewForm"
+      aria-label="Toggle Peer Review Form"
+      aria-controls="divReviewPanel"
+      aria-expanded="false"
+    >
       Complete a Review
-   
     </button>
   </div>
 
-  <!-- Submit Peer Review Panel Hidden until button clicked -->
-  <div class="card mb-4 d-none" id="divReviewPanel">
-   
+  <!-- Submit peer review -->
+  <div class="card mb-4 d-none" id="divReviewPanel" aria-label="Submit Peer Review Section">
+
     <div class="card-header bg-secondary text-white">Submit Peer Review</div>
     <div class="card-body">
-      <select class="form-select mb-2" id="ddlTeammates">
-        
+      <select class="form-select mb-2" id="ddlTeammates" aria-label="Select Teammate Dropdown">
         <option selected disabled>Select a teammate</option>
-      
-    </select>
+      </select>
 
       <label for="ddlScore" class="form-label">Review Score</label>
-      <select class="form-select mb-2" id="ddlScore">
-        
+
+      <select class="form-select mb-2" id="ddlScore" aria-label="Select Review Score">
         <option value="" disabled selected>Select a score</option>
         <option value="1">1 - Poor</option>
         <option value="2">2 - Fair</option>
@@ -66,19 +71,32 @@
       </select>
 
       <label for="txtPublicFeedback" class="form-label">Public Feedback</label>
-      <textarea class="form-control mb-2" id="txtPublicFeedback" rows="3" placeholder="Public feedback..."></textarea>
+
+      <textarea
+        class="form-control mb-2"
+        id="txtPublicFeedback"
+        rows="3"
+        placeholder="Public feedback..."
+        aria-label="Public Feedback Text Area"
+      ></textarea>
 
       <label for="txtPrivateFeedback" class="form-label">Private Feedback (Instructor Only)</label>
-      <textarea class="form-control mb-2" id="txtPrivateFeedback" rows="2" placeholder="Private notes for instructor..."></textarea>
+      <textarea
+        class="form-control mb-2"
+        id="txtPrivateFeedback"
+        rows="2"
+        placeholder="Private notes for instructor..."
+        aria-label="Private Feedback Text Area"
+      ></textarea>
 
-      <button class="btn btn-primary" id="btnSubmitReview">Submit Review</button>
+      <button class="btn btn-primary" id="btnSubmitReview" aria-label="Submit Review Button">Submit Review</button>
     </div>
   </div>
 
-  <!-- Received Feedback Section With Placeholder feedback from js-->
-  <div class="card mb-4">
+  <!-- Received Feedback Section -->
+  <div class="card mb-4" aria-label="Feedback Received Section">
     <div class="card-header bg-dark text-white">My Feedback</div>
-    <div class="card-body" id="divFeedbackInbox">
+    <div class="card-body" id="divFeedbackInbox" aria-label="Feedback Inbox Display">
       <p>No feedback received yet.</p>
     </div>
   </div>
