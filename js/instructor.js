@@ -11,11 +11,19 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentReviewQuestions = [];
     // Dummy review submissions – in a real app these would be loaded from the backend
     let reviewSubmissions = { public: [], private: [] };
+<<<<<<< HEAD
     // Dummy student report data with courseId property (for simulation)
     let studentReports = [
       { name: "Alice Example", average: 75, courseId: null },
       { name: "Bob Example", average: 82, courseId: null },
       { name: "Charlie Example", average: 68, courseId: null }
+=======
+    // Dummy student report data
+    let studentReports = [
+      { name: "Student A", average: 75 },
+      { name: "Student B", average: 82 },
+      { name: "Student C", average: 68 }
+>>>>>>> student_page
     ];
     // Dummy class metrics
     let classMetrics = {
@@ -25,6 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
       averageReviewScore: 80
     };
   
+<<<<<<< HEAD
     // Dummy students available for teams (simulate enrolled students)
     let dummyStudents = [
       { id: 1, name: "Alice Example" },
@@ -40,16 +49,24 @@ document.addEventListener("DOMContentLoaded", () => {
     let selectedReportCourseId = null;
   
     // Get DOM elements for Courses
+=======
+    // Get DOM elements for courses
+>>>>>>> student_page
     const txtCourseName = document.getElementById("courseName");
     const txtCourseCode = document.getElementById("courseCode");
     const btnCreateCourse = document.getElementById("btnCreateCourse");
     const divCourseList = document.getElementById("courseList");
   
+<<<<<<< HEAD
     // Get DOM elements for Teams
+=======
+    // Get DOM elements for teams
+>>>>>>> student_page
     const teamCourseSelect = document.getElementById("teamCourse");
     const txtTeamName = document.getElementById("teamName");
     const btnCreateTeam = document.getElementById("btnCreateTeam");
     const divTeamList = document.getElementById("teamList");
+<<<<<<< HEAD
     // New elements for team student management
     const studentSelect = document.getElementById("studentSelect");
     const btnAddStudent = document.getElementById("btnAddStudent");
@@ -58,18 +75,29 @@ document.addEventListener("DOMContentLoaded", () => {
     // Get DOM elements for Review Template (left column)
     const txtReviewTitle = document.getElementById("reviewTitle");
     const ddlReviewType = document.getElementById("reviewType");
+=======
+  
+    // Get DOM elements for review template
+    const txtReviewTitle = document.getElementById("reviewTitle");
+    const txtReviewDescription = document.getElementById("reviewDescription");
+>>>>>>> student_page
     const btnCreateReviewTemplate = document.getElementById("btnCreateReviewTemplate");
     const divReviewQuestions = document.getElementById("reviewQuestions");
     const txtQuestionText = document.getElementById("questionText");
     const ddlQuestionType = document.getElementById("questionType");
     const btnAddQuestion = document.getElementById("btnAddQuestion");
   
+<<<<<<< HEAD
     // Get DOM elements for Scheduling Reviews
+=======
+    // Get DOM elements for scheduling reviews
+>>>>>>> student_page
     const scheduleReviewSelect = document.getElementById("scheduleReviewSelect");
     const txtReviewDate = document.getElementById("reviewDate");
     const txtReviewTime = document.getElementById("reviewTime");
     const btnScheduleReview = document.getElementById("btnScheduleReview");
   
+<<<<<<< HEAD
     // Get DOM elements for Reports
     const btnSortAverages = document.getElementById("btnSortAverages");
     const divStudentAverageReport = document.getElementById("studentAverageReport");
@@ -83,6 +111,18 @@ document.addEventListener("DOMContentLoaded", () => {
     // ----------------------------
     // Courses Section
     // ----------------------------
+=======
+    // Get DOM elements for reports
+    const btnSortAverages = document.getElementById("btnSortAverages");
+    const divStudentAverageReport = document.getElementById("studentAverageReport");
+    const divClassMetrics = document.getElementById("classMetrics");
+  
+    // Get DOM elements for review submissions tabs
+    const divPublicReviewList = document.getElementById("publicReviewList");
+    const divPrivateReviewList = document.getElementById("privateReviewList");
+  
+    // Create Course
+>>>>>>> student_page
     btnCreateCourse.addEventListener("click", () => {
       const courseName = txtCourseName.value.trim();
       const courseCode = txtCourseCode.value.trim();
@@ -101,11 +141,18 @@ document.addEventListener("DOMContentLoaded", () => {
       txtCourseCode.value = "";
       updateCourseList();
       updateTeamCourseDropdown();
+<<<<<<< HEAD
       updateReportCourseDropdown();
+=======
+>>>>>>> student_page
       updateScheduleReviewSelect();
       updateClassMetrics();
     });
   
+<<<<<<< HEAD
+=======
+    // Update Courses List UI
+>>>>>>> student_page
     function updateCourseList() {
       divCourseList.innerHTML = "";
       if (courses.length === 0) {
@@ -120,7 +167,11 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   
+<<<<<<< HEAD
     // Update dropdown for team creation (courses)
+=======
+    // Update team course dropdown options
+>>>>>>> student_page
     function updateTeamCourseDropdown() {
       teamCourseSelect.innerHTML = `<option value="" disabled selected>Select a course</option>`;
       courses.forEach(course => {
@@ -131,6 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   
+<<<<<<< HEAD
     // Update dropdown for reports (courses)
     function updateReportCourseDropdown() {
       reportCourseSelect.innerHTML = `<option value="" disabled selected>Select a course</option>`;
@@ -191,6 +243,8 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   
+=======
+>>>>>>> student_page
     // Create Team
     btnCreateTeam.addEventListener("click", () => {
       const selectedCourseId = teamCourseSelect.value;
@@ -202,6 +256,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const team = {
         id: Date.now(),
         courseId: selectedCourseId,
+<<<<<<< HEAD
         name: teamName,
         students: [...tempTeamStudents]
       };
@@ -210,10 +265,21 @@ document.addEventListener("DOMContentLoaded", () => {
       txtTeamName.value = "";
       tempTeamStudents = [];
       updateTeamStudentsUI();
+=======
+        name: teamName
+      };
+      teams.push(team);
+      Swal.fire("Success", `Team "${teamName}" created.`, "success");
+      txtTeamName.value = "";
+>>>>>>> student_page
       updateTeamList();
       updateClassMetrics();
     });
   
+<<<<<<< HEAD
+=======
+    // Update Teams List UI
+>>>>>>> student_page
     function updateTeamList() {
       divTeamList.innerHTML = "";
       if (teams.length === 0) {
@@ -225,16 +291,24 @@ document.addEventListener("DOMContentLoaded", () => {
         const courseName = course ? course.name : "Unknown Course";
         const teamCard = document.createElement("div");
         teamCard.className = "border p-2 mb-2";
+<<<<<<< HEAD
         let studentNames = team.students.map(s => s.name).join(", ") || "No students";
         teamCard.innerHTML = `<strong>${team.name}</strong> for ${courseName}<br>Students: ${studentNames}`;
+=======
+        teamCard.innerHTML = `<strong>${team.name}</strong> for ${courseName}`;
+>>>>>>> student_page
         divTeamList.appendChild(teamCard);
       });
     }
   
+<<<<<<< HEAD
     // ----------------------------
     // Review Template Section
     // ----------------------------
     // Add Question to current review template
+=======
+    // Add Question for Review Template
+>>>>>>> student_page
     btnAddQuestion.addEventListener("click", () => {
       const questionText = txtQuestionText.value.trim();
       const questionType = ddlQuestionType.value;
@@ -254,6 +328,10 @@ document.addEventListener("DOMContentLoaded", () => {
       updateReviewQuestionsUI();
     });
   
+<<<<<<< HEAD
+=======
+    // Update review questions display
+>>>>>>> student_page
     function updateReviewQuestionsUI() {
       divReviewQuestions.innerHTML = "";
       if (currentReviewQuestions.length === 0) {
@@ -278,32 +356,53 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   
+<<<<<<< HEAD
     // Create Review Template using review title, review type, and questions
     btnCreateReviewTemplate.addEventListener("click", () => {
       const reviewTitle = txtReviewTitle.value.trim();
       const reviewType = ddlReviewType.value;
       if (!reviewTitle || !reviewType) {
         Swal.fire("Error", "Please enter a review title and select a review type.", "error");
+=======
+    // Create Review Template (with associated questions)
+    btnCreateReviewTemplate.addEventListener("click", () => {
+      const reviewTitle = txtReviewTitle.value.trim();
+      const reviewDescription = txtReviewDescription.value.trim();
+      if (!reviewTitle) {
+        Swal.fire("Error", "Please enter a review title.", "error");
+>>>>>>> student_page
         return;
       }
       const reviewTemplate = {
         id: Date.now(),
         title: reviewTitle,
+<<<<<<< HEAD
         type: reviewType, // public or private
+=======
+        description: reviewDescription,
+>>>>>>> student_page
         questions: [...currentReviewQuestions]
       };
       reviewTemplates.push(reviewTemplate);
       Swal.fire("Success", `Review Template "${reviewTitle}" created.`, "success");
       txtReviewTitle.value = "";
+<<<<<<< HEAD
       ddlReviewType.selectedIndex = 0;
+=======
+      txtReviewDescription.value = "";
+>>>>>>> student_page
       currentReviewQuestions = [];
       updateReviewQuestionsUI();
       updateScheduleReviewSelect();
     });
   
+<<<<<<< HEAD
     // ----------------------------
     // Scheduling Reviews Section
     // ----------------------------
+=======
+    // Update schedule review dropdown with available review templates
+>>>>>>> student_page
     function updateScheduleReviewSelect() {
       scheduleReviewSelect.innerHTML = `<option value="" disabled selected>Select a review template</option>`;
       reviewTemplates.forEach(template => {
@@ -314,6 +413,10 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   
+<<<<<<< HEAD
+=======
+    // Schedule Review
+>>>>>>> student_page
     btnScheduleReview.addEventListener("click", () => {
       const selectedTemplateId = scheduleReviewSelect.value;
       const reviewDate = txtReviewDate.value;
@@ -334,9 +437,13 @@ document.addEventListener("DOMContentLoaded", () => {
       txtReviewTime.value = "";
     });
   
+<<<<<<< HEAD
     // ----------------------------
     // Review Submissions Section (Simulated)
     // ----------------------------
+=======
+    // Update review submissions UI (dummy simulation)
+>>>>>>> student_page
     function updateReviewSubmissions() {
       if (reviewSubmissions.public.length === 0) {
         divPublicReviewList.innerHTML = "<p>No public reviews yet.</p>";
@@ -363,6 +470,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     updateReviewSubmissions();
   
+<<<<<<< HEAD
     // ----------------------------
     // Reports Section
     // ----------------------------
@@ -379,10 +487,16 @@ document.addEventListener("DOMContentLoaded", () => {
     btnSortAverages.addEventListener("click", () => {
       // Toggle sort order
       sortAscending = !sortAscending;
+=======
+    // Sort and display student average report
+    btnSortAverages.addEventListener("click", () => {
+      studentReports.sort((a, b) => a.average - b.average);
+>>>>>>> student_page
       updateStudentAverageReport();
     });
   
     function updateStudentAverageReport() {
+<<<<<<< HEAD
       // Only show report if a course is selected
       if (!selectedReportCourseId) {
         divStudentAverageReport.innerHTML = "<p>Please select a course for the report.</p>";
@@ -395,6 +509,10 @@ document.addEventListener("DOMContentLoaded", () => {
       
       divStudentAverageReport.innerHTML = "";
       if (filteredReports.length === 0) {
+=======
+      divStudentAverageReport.innerHTML = "";
+      if (studentReports.length === 0) {
+>>>>>>> student_page
         divStudentAverageReport.innerHTML = "<p>No report data available.</p>";
         return;
       }
@@ -404,7 +522,11 @@ document.addEventListener("DOMContentLoaded", () => {
       thead.innerHTML = "<tr><th>Student</th><th>Average (100 pt scale)</th></tr>";
       table.appendChild(thead);
       const tbody = document.createElement("tbody");
+<<<<<<< HEAD
       filteredReports.forEach(student => {
+=======
+      studentReports.forEach(student => {
+>>>>>>> student_page
         const tr = document.createElement("tr");
         tr.innerHTML = `<td>${student.name}</td><td>${student.average}</td>`;
         tbody.appendChild(tr);
@@ -412,10 +534,16 @@ document.addEventListener("DOMContentLoaded", () => {
       table.appendChild(tbody);
       divStudentAverageReport.appendChild(table);
     }
+<<<<<<< HEAD
   
     // ----------------------------
     // Class Metrics Section
     // ----------------------------
+=======
+    updateStudentAverageReport();
+  
+    // Update class metrics display
+>>>>>>> student_page
     function updateClassMetrics() {
       classMetrics.totalCourses = courses.length;
       classMetrics.totalTeams = teams.length;
